@@ -118,8 +118,8 @@ namespace KrathokRobot {
     //% group="บล็อคเริ่มต้น"
     //% weight=60
     //% blockGap=8
-    //% left_speed.min=0 left_speed.max=1000
-     //% right_speed.min=0 right_speed.max=1000
+    //% left_speed.min=-1000 left_speed.max=1000
+     //% right_speed.min=-1000 right_speed.max=1000
     export function Moves(left_speed: number, right_speed: number) {
         set_motors(left_speed, right_speed)
     }
