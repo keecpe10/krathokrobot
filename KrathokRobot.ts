@@ -144,5 +144,21 @@ namespace KrathokRobot {
         }
     }
 
+    /** หยุดมอเตอร์ มอเตอร์1,มอเตอร์2   
+      */
+    //% blockId="KrathokRobot_จบการทำงาน" block="จบการทำงาน"
+    //% subcategory=บล็อคเริ่มต้น
+    //% group="บล็อคเริ่มต้น"
+    //% weight=40
+    //% blockGap=8
+    export function Motors_Stop(): void {
+        while (true) {
+            pins.digitalWritePin(DigitalPin.P13, 1)
+            pins.analogWritePin(AnalogPin.P14, 0)
+            pins.digitalWritePin(DigitalPin.P15, 1)
+            pins.analogWritePin(AnalogPin.P16, 0)
+        }
+    }
+
 
 }
