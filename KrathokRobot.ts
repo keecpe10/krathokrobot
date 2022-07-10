@@ -21,6 +21,13 @@ enum ReadADC {
     ADC7 = 244
 }
 
+enum KrathokRobotButton {
+    //% block="A"
+    A,
+    //% block="B"
+    B
+}
+
 enum Directions {
     //% block="ซ้าย"
     Left,
@@ -116,5 +123,26 @@ namespace KrathokRobot {
     export function Moves(left_speed: number, right_speed: number) {
         set_motors(left_speed, right_speed)
     }
+
+    /** รอการกดปุ่ม  
+             */
+    //% blockId="KrathokRobot_รอการกดปุ่ม" block="รอการกดปุ่ม | %button"
+    //% subcategory=บล็อคเริ่มต้น
+    //% group="บล็อคเริ่มต้น"
+    //% weight=75
+    //% blockGap=8
+    export function รอการกดปุ่ม(button: KrathokRobotButton): void {
+        if (button == KrathokRobotButton.A) {
+            while (!(input.buttonIsPressed(Button.A))) {
+                basic.showArrow(ArrowNames.West)
+            }
+        }
+        if (button == KrathokRobotButton.B) {
+            while (!(input.buttonIsPressed(Button.B))) {
+                basic.showArrow(ArrowNames.East)
+            }
+        }
+    }
+
 
 }
